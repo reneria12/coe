@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+       * {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+            .register .nav-tabs .nav-link:hover{
+                border: none;
+            }
+            .text-align{
+                margin-top: -3%;
+                margin-bottom: -9%;
+
+                padding: 10%;
+                margin-left: 30%;
+            }
+            .form-new{
+                margin-right: 22%;
+                margin-left: 20%;
+            }
+            .register-heading{
+                margin-left:0%;
+                margin-bottom: 10%;
+                color: #e9ecef;
+            }
+           
+            .register{
+                background: -webkit-linear-gradient(left, #055a4f, #00c6ff);
+                margin-top: 3%;
+                padding: 3%;
+                border-radius: 2.5rem;
+            }
+            .btnSubmit
+            {
+                width: 10%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                color: #fff;
+                background-color: #03612e;
+                border: none;
+                cursor: pointer;
+                margin-right: 6%;
+                color: rgb(246, 246, 252);
+                margin-top: 4%;
+            }
+    </style>
+
+</head>
+<body>
+    
+
+    <img src="D:\work project\coe image.png" alt="coe Icon" style="float:right;width:100px;height:100px;">
+                            <h2 style="text-align: center;">Office of the Controller of Examinations</h2>
+                            
+                            <h1 style="text-align: center;" >K.Ramakrishnan College of Engineering</h1>
+                            <h3 style="text-align: center;" ><u>Examiner Claim</u></h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                        <div class="row">
+                                            <div class="column" style="background-color: aquamarine;">
+                                                <h3>Examiner Details</h3>
+                                                <div class="form-group">
+                                                    <label for="date">Date</label>
+                                                    <input type="date" name="Date" id="date"class="form-control" placeholder="Date *" value="" required=""/>
+                                                   <br><br>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Examiner Name</label>
+                                                    <input type="text" name="Examiner Name" id="name"class="form-control" placeholder="Your Name *" value="" required=""/>
+                                                   <br><br>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="no">Mobile Number</label>
+                                                    <input type="number" name="Mobile number" id="no"class="form-control" placeholder="Mobile Number *" value="" required=""/>
+                                                   <br><br>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="des">Examiner Desig</label>
+                                                    <input type="text" name="Designation" id="des"class="form-control" placeholder="Designation *" value="" required=""/>
+                                                   <br><br>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="ins">Institution Name</label>
+                                                    <input type="text" name="Institution" id="ins"class="form-control" placeholder="Institution Name *" value="" required=""/>
+                                                   <br><br>
+                                                </div>
+                                                   <div class="form-group">
+                                                    <label for="code">Institution Code</label>
+                                                    <input type="number" name="Institution code" id="code"class="form-control" placeholder="Institution Code *" value="" required=""/>
+                                                   <br><br>
+                                                   </div>
+                                                   <div class="form-group">
+                                                    <h3>Script Details</h3>
+                                                    <label for="board">Board Name</label>
+                                                    <select name="Board" id="board">
+                                                        <option value="Select">Select</option>
+                                                        <option value="CSE">CSE</option>
+                                                        <option value="ECE">ECE</option>
+                                                        <option value="EEE">EEE</option>
+                                                        <option value="MECH">MECH</option>
+                                                      </select>>
+                                                   <br><br>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="s.code">Subject Code</label>
+                                                    <input type="text" name="Subject Code" id="s.code"class="form-control" placeholder="Subject Code *" value="" required=""/>
+                                                   <br><br>
+                                                   </div>
+                                                   <div class="form-group">
+                                                    <label for="s.name">Subject Name</label>
+                                                    <input type="text" name="Subject Name" id="s.name"class="form-control" placeholder="Subject Name *" value="" required=""/>
+                                                   <br><br>
+                                                   </div>
+                                            </div>
+                                            <div class="column" style="background-color: aquamarine;">
+                                                    <div class="form-group">
+                                                    <label for="ir">Issue Register No.</label>
+                                                    <input type="text" name="Issue Register No." id="ir"class="form-control" placeholder="Issue Register No. *" value="" required=""/>
+                                                   <br><br>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="script">No.of Script Valued</label>
+                                                    <input type="number" name="No.of Script" id="script" class="form-control" placeholder="Number of Script *" onchange="calculateAmount1(this.value)" value="" required=""/>
+                                                   <br><br>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="amount">Valuation Amount</label>
+                                                    <input type="number" name="Valuation Amount" id="amount"class="form-control" placeholder=" *" value=""  required=""/>
+                                                   <br><br>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="da">Dearness Allowance</label>
+                                                    <input type="number" name="DA" id="da"class="form-control" placeholder=" *" value="250"  required=""/>
+                                                   <br><br>
+                                                </div>
+                                                
+                                                    <div class="form-group">
+                                                        <label for="ta">TA for Trichy & Ariyalur Zone</label>
+                                                        <input type="number" name="TA" id="ta"class="form-control" placeholder="Enter the amount " value="" />
+                                                       <br><br>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ta1">TA for Other Zone</label>
+                                                        <input type="number" name="TAO" id="ta1"class="form-control" placeholder=" Type the Distance "onchange="calculateAmount2(this.value)" value=""  />
+                                                       <br><br>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ta2">TA Amount</label>
+                                                        <input type="number" name="TAO1" id="ta2"class="form-control" placeholder=" " required=""/>
+                                                       <br><br>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="total">Total Amount</label>
+                                                        <input type="number" name="Total" id="total"class="form-control" placeholder=" " onchange="add()" required=""/>
+                                                       <br><br>
+                                                    </div>
+                                        <div class="form-group">
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Submit" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw05qriDiu-qHtrjUnMNycnsDLkmqPQUDJCENQC-3OyPIyg0YelreDR9zpNuJscN2xC/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script>  
+            function calculateAmount1(val) {  
+                if(val<3){
+                var tot_amount = 75;  
+                var divobj = document.getElementById('amount');  
+                divobj.value = tot_amount; 
+                } 
+                else{
+                    var tot_amount = val * 25;  
+                var divobj = document.getElementById('amount');  
+                divobj.value = tot_amount; 
+
+                }
+
+            }  
+        </script> 
+        <script>  
+            function calculateAmount2(val) {  
+                var tot_amount = val *10 ;  
+                var divobj = document.getElementById('ta2');  
+                divobj.value = tot_amount; 
+
+            }  
+        </script>   
+        <script>  
+            function add(){
+           a=document.getElementById.value('da')
+            b=document.getElementById.value('ta')
+            c=document.getElementById.value('ta2')
+            d=document.getElementById.value('amount')
+            var tot_amount=a+b+c+d;
+            var divobj = document.getElementById('total');  
+                divobj.value = tot_amount; 
+                   
+
+            }  
+        </script>
+
+        
+</body>
+</html>
